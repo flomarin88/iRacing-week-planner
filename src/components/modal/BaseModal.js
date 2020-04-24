@@ -20,11 +20,15 @@ export default class BaseModal extends React.Component {
   };
 
   render() {
-    const { isOpen, onRequestClose, closeTimeoutMS, children, className } = this.props;
+    const {
+      isOpen, onRequestClose, closeTimeoutMS, children, className
+    } = this.props;
 
     return (
       <Modal
-        onRequestClose={onRequestClose} closeTimeoutMS={closeTimeoutMS} isOpen={isOpen}
+        onRequestClose={onRequestClose}
+        closeTimeoutMS={closeTimeoutMS}
+        isOpen={isOpen}
         className={classNames('Modal__Bootstrap', 'modal-dialog', 'modal-lg', className)}
         ariaHideApp={false}
       >

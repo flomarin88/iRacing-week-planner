@@ -29,7 +29,7 @@ export default class FavouriteSeriesModal extends Component {
 
   setCheckboxFavourite(seriesId, e) {
     const { favouriteSeries, save } = this.props;
-    const newFavorites = [ ...favouriteSeries ];
+    const newFavorites = [...favouriteSeries];
     const index = newFavorites.indexOf(seriesId);
 
     if (index === -1 && e.target.checked) {

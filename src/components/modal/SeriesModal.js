@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Modal from './Modal';
 import moment from 'moment';
 import classnames from 'classnames';
+import Modal from './Modal';
 
 import allRaces from '../../lib/races';
 
@@ -23,8 +23,10 @@ export default class SeriesModal extends Component {
   }
 
   render() {
-    const { onClose, ownedTracks, isOpen, seriesId } = this.props;
-    const races = allRaces.filter(race => race.seriesId === seriesId);
+    const {
+      onClose, ownedTracks, isOpen, seriesId
+    } = this.props;
+    const races = allRaces.filter((race) => race.seriesId === seriesId);
 
     return (
       <Modal isOpen={isOpen} onClose={onClose} title={`Tracks for ${races[0].series}`} doneAction={onClose}>
@@ -52,11 +54,13 @@ export default class SeriesModal extends Component {
                         {race.track}
                       </td>
                       <td>{moment(race.startTime).local().format('YYYY-MM-DD')}</td>
-                      <td>{
+                      <td>
+                        {
                         moment(race.startTime).local().add(race.weekLength)
                           .subtract(1, 'days')
                           .format('YYYY-MM-DD')
-                      }</td>
+                      }
+                      </td>
                     </tr>
                   );
                 })}

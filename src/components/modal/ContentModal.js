@@ -7,7 +7,7 @@ import Checkbox from '../Checkbox';
 import FavouriteStarButton from '../FavouriteStarButton';
 
 const toggleIdInCollection = (collection, id, newState) => {
-  const newCollection = [ ...collection ];
+  const newCollection = [...collection];
   const index = newCollection.indexOf(id);
 
   if (index === -1 && newState) {
@@ -71,7 +71,7 @@ export default class ContentModal extends Component {
 
     const { key } = typeFilter;
     const value = typeFilter[type];
-    return content.filter(item => isEqual(item[key], value)).map(item => item[idField]);
+    return content.filter((item) => isEqual(item[key], value)).map((item) => item[idField]);
   }
 
   allTypeContentChecked(type) {
@@ -113,18 +113,22 @@ export default class ContentModal extends Component {
   }
 
   toggleAllContent(e) {
-    const { save, content, idField, defaultContent } = this.props;
-    save(e.target.checked ? content.map(item => item[idField]) : defaultContent);
+    const {
+      save, content, idField, defaultContent
+    } = this.props;
+    save(e.target.checked ? content.map((item) => item[idField]) : defaultContent);
   }
 
   toggleAllFavourites(newState, e) {
     e.preventDefault();
     const { saveFavourites, content, idField } = this.props;
-    saveFavourites(newState ? content.map(item => item[idField]) : []);
+    saveFavourites(newState ? content.map((item) => item[idField]) : []);
   }
 
   render() {
-    const { onClose, title, content, ownedContent, isOpen, idField, defaultContent, favourites } = this.props;
+    const {
+      onClose, title, content, ownedContent, isOpen, idField, defaultContent, favourites
+    } = this.props;
     return (
       <Modal isOpen={isOpen} onClose={onClose} title={title} doneAction={onClose}>
         <div className='container-fluid'>

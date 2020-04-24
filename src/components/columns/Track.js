@@ -8,7 +8,8 @@ export default function Track({ ownedTracks, race, favouriteTracks }) {
       <div>
         {favouriteTracks.indexOf(race.trackId) !== -1 ? (
           <span className='glyphicon glyphicon-star' />
-        ) : null}<span> </span>
+        ) : null}
+        <span> </span>
         {race.track}
       </div>
     </td>

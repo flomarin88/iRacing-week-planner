@@ -5,7 +5,8 @@ import classnames from 'classnames';
 export default function FavouriteStarButton({ enabled, onClick }) {
   return (
     <span
-      onClick={onClick.bind(null, !enabled)} className={classnames({
+      onClick={onClick.bind(null, !enabled)}
+      className={classnames({
         glyphicon: true,
         'glyphicon-star': enabled,
         'glyphicon-star-empty': !enabled

@@ -60,8 +60,10 @@ export default class RaceListing extends Component {
   }
 
   render() {
-    const { date, sort, filters, favouriteSeries, ownedTracks, ownedCars,
-      favouriteCars, favouriteTracks, columnIds } = this.props;
+    const {
+      date, sort, filters, favouriteSeries, ownedTracks, ownedCars,
+      favouriteCars, favouriteTracks, columnIds
+    } = this.props;
 
     let races = allRaces.filter((race) => moment(date).add(1, 'hour').isBetween(race.startTime, race.endTime));
 

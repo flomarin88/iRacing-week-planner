@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import CarModal from '../modal/CarModal';
 import classnames from 'classnames';
 import intersection from 'lodash.intersection';
+import CarModal from '../modal/CarModal';
 
 export default class Car extends Component {
   static propTypes = {
@@ -55,10 +55,11 @@ export default class Car extends Component {
         <div>
           {intersection(favouriteCars, race.carIds).length !== 0 ? (
             <span className='glyphicon glyphicon-star' />
-          ) : null}<span> </span>
+          ) : null}
+          <span> </span>
           {race.carClasses.join(', ')}
         </div>
-          {this.renderModal()}
+        {this.renderModal()}
       </td>
     );
   }

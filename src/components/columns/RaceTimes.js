@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Modal from '../modal/Modal';
 import moment from 'moment';
+import Modal from '../modal/Modal';
 
 export default class NextRace extends Component {
   static propTypes = {
@@ -31,7 +31,9 @@ export default class NextRace extends Component {
 
     return (
       <Modal
-        isOpen={modalOpen} onClose={this.closeModal} title={`Set times for ${race.series}`}
+        isOpen={modalOpen}
+        onClose={this.closeModal}
+        title={`Set times for ${race.series}`}
         doneAction={this.closeModal}
       >
         <div className='container-fluid'>
@@ -39,8 +41,11 @@ export default class NextRace extends Component {
             {race.raceTimes.setTimes.map(
               (time, index) => (
                 <li key={index}>
-                  {moment(weekStart).add(time).local().format('ddd h:mma')},
-                  ({moment(weekStart).add(time).utc().format('ddd h:mma z')})
+                  {moment(weekStart).add(time).local().format('ddd h:mma')}
+                  ,
+                  (
+                  {moment(weekStart).add(time).utc().format('ddd h:mma z')}
+                  )
                 </li>
               )
             )}
@@ -70,8 +75,14 @@ export default class NextRace extends Component {
       return (
         <td>
           <div>
-            Every {race.raceTimes.everyTime.humanize().replace(/an?\s/, '')} starting
-            at {moment().utc().startOf('day')
+            Every
+            {' '}
+            {race.raceTimes.everyTime.humanize().replace(/an?\s/, '')}
+            {' '}
+            starting
+            at
+            {' '}
+            {moment().utc().startOf('day')
               .add(race.raceTimes.offset)
               .format('H:mm')}
             UTC

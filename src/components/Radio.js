@@ -18,7 +18,9 @@ export default class Radio extends Component {
   }
 
   render() {
-    const { onChange, selected, disabled, children, name } = this.props;
+    const {
+      onChange, selected, disabled, children, name
+    } = this.props;
 
     return (
       <div className={classnames({ radio: true, disabled })}>

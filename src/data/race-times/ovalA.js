@@ -17,7 +17,7 @@ export default [
     // NASCAR Road to Pro
     seriesId: 328,
     // setTimes: [
-      // duration({ days: 1, hours: 2 }), // Wed 2am
+    // duration({ days: 1, hours: 2 }), // Wed 2am
     // ],
     weekStartOffset: duration({ days: 7 }),
     weekEndOffset: duration({ days: 7 }),

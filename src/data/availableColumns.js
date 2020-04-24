@@ -1,8 +1,8 @@
+import moment from 'moment';
 import {
   Id, Car, Class, EndDate, Fixed, Licence, Link, NextRace, Official,
   RaceTimes, Series, SeasonEnd, StartDate, Track, Type
-} from '../components/columns/';
-import moment from 'moment';
+} from '../components/columns';
 
 /* eslint react/no-multi-comp: 0 */
 

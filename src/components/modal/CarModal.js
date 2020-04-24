@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Modal from './Modal';
 import moment from 'moment';
 import classnames from 'classnames';
+import Modal from './Modal';
 
 import allCars from '../../data/cars.json';
 
@@ -26,8 +26,10 @@ export default class CarModal extends Component {
   }
 
   render() {
-    const { onClose, ownedCars, favouriteCars, isOpen, carIds, seriesName } = this.props;
-    const cars = allCars.filter(car => carIds.includes(car.sku));
+    const {
+      onClose, ownedCars, favouriteCars, isOpen, carIds, seriesName
+    } = this.props;
+    const cars = allCars.filter((car) => carIds.includes(car.sku));
 
     return (
       <Modal isOpen={isOpen} onClose={onClose} title={`Cars for ${seriesName}`} doneAction={onClose}>
@@ -41,17 +43,18 @@ export default class CarModal extends Component {
               </thead>
               <tbody>
                 {cars.map((car, index) => (
-                  <tr 
+                  <tr
                     key={index}
                     className={classnames({
-                    success: ownedCars.includes(car.sku),
-                    'clickable-cell': true
-                  })}
+                      success: ownedCars.includes(car.sku),
+                      'clickable-cell': true
+                    })}
                   >
                     <td>
                       {favouriteCars.includes(car.sku) ? (
                         <span className='glyphicon glyphicon-star' />
-                      ) : null}<span> </span>
+                      ) : null}
+                      <span> </span>
                       {car.name}
                     </td>
                   </tr>

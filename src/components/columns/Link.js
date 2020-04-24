@@ -6,7 +6,8 @@ export default function Link({ race }) {
     <td>
       <a
         href={`http://members.iracing.com/membersite/member/SeriesSessions.do?season=${race.seasonId}`}
-        target='_blank'>
+        target='_blank'
+      >
         <span className='glyphicon glyphicon-link' />
       </a>
     </td>

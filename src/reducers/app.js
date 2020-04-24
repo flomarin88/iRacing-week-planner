@@ -1,5 +1,5 @@
-import { UPDATE_DAYS } from '../actions/app';
 import moment, { duration } from 'moment';
+import { UPDATE_DAYS } from '../actions/app';
 import { seasonStart, weekSeasonStart } from '../config';
 
 const currentDate = moment(new Date()).utc().startOf('day');
